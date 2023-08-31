@@ -1,0 +1,112 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  background: linear-gradient(to bottom, #101214, #1a1f23);
+  color: #ddd;
+  font-family: 'Arial', sans-serif;
+}
+
+.red-background {
+  background-color: #a50000; /* Red color */
+  transition: background-color 0.5s;
+}
+
+.difficulty-options {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.difficulty-options label,
+.difficulty-options select {
+  font-size: 20px;
+}
+
+.memory-game-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.memory-game {
+  width: 700px;
+  height: 640px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  perspective: 1000px;
+  background: #1a1f23;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.memory-card {
+  width: calc(25% - 10px);
+  height: calc(33.333% - 10px);
+  margin: 5px;
+  position: relative;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform .5s;
+  box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+}
+
+.memory-card:active {
+  transform: scale(0.97);
+  transition: transform .2s;
+}
+
+.memory-card.flip {
+  transform: rotateY(180deg);
+}
+
+.memory-card:hover {
+  border: 1px solid #FFD700;
+}
+
+.front-face,
+.back-face {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  position: absolute;
+  background: #101214;
+  border-radius: 8px;
+  backface-visibility: hidden;
+  
+}
+
+.front-face {
+  transform: rotateY(180deg);
+}
+
+.timer {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #FFD700;
+}
+
+.congratulations-message {
+  display: none;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 20px;
+  color: #FFD700;
+}
+
+.lost-message {
+  display: none;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 20px;
+  color: #a50000c9;
+}
