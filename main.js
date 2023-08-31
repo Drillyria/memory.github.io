@@ -96,12 +96,14 @@ function createCardElement(framework) {
 
   const frontFace = document.createElement('img');
   frontFace.classList.add('front-face');
-  frontFace.src = `./img/${framework}.jpg`;
+  frontFace.src = `https://thedrilondevil.github.io/memory.github.io/img/${framework}.jpg`;
   frontFace.alt = framework;
-
+  
+  
+  
   const backFace = document.createElement('img');
   backFace.classList.add('back-face');
-  backFace.src = './img/card-back.png';
+  backFace.src = 'https://thedrilondevil.github.io/memory.github.io/img/card-back.png';
   backFace.alt = 'Skyrim';
 
   card.appendChild(frontFace);
