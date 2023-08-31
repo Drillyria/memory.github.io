@@ -96,7 +96,7 @@ function createCardElement(framework) {
 
   const frontFace = document.createElement('img');
   frontFace.classList.add('front-face');
-  frontFace.src = `./img/${framework}.jpg`;
+  frontFace.src = './img/' + framework + '.jpg';
   frontFace.alt = framework;
   
   
