@@ -34,8 +34,6 @@ function resetTimer(difficulty) {
   startTimer(difficulties[difficulty].timer);
 }
 
-
-
 function startTimer(seconds) {
   clearInterval(timerInterval); // Clear previous interval if it exists
 
@@ -66,8 +64,6 @@ function startTimer(seconds) {
   }, 1000);
 }
 
-
-
 function resetTimer() {
   clearInterval(timerInterval);
   const timerValueElement = document.getElementById('timer-value');
@@ -96,14 +92,12 @@ function createCardElement(framework) {
 
   const frontFace = document.createElement('img');
   frontFace.classList.add('front-face');
-  frontFace.src = 'https://thedrilondevil.github.io/memory.github.io/img/' + framework + '.jpg';
+  frontFace.src = `./img/${framework}.jpg`;
   frontFace.alt = framework;
-  
-  
-  
+
   const backFace = document.createElement('img');
   backFace.classList.add('back-face');
-  backFace.src = 'https://thedrilondevil.github.io/memory.github.io/img/card-back.png';
+  backFace.src = './img/card-back.png';
   backFace.alt = 'Skyrim';
 
   card.appendChild(frontFace);
@@ -131,7 +125,7 @@ function generateCards(difficulty) {
   congratulationsMessage.style.display = 'none';
 
   allImages.forEach(image => {
-    const framework = image.split('.')[0];
+    const framework = image.split('.')[0].toLowerCase();
     const card = createCardElement(framework);
     memoryGame.appendChild(card);
   });
