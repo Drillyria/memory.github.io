@@ -125,7 +125,7 @@ function generateCards(difficulty) {
   congratulationsMessage.style.display = 'none';
 
   allImages.forEach(image => {
-    const framework = image.split('.')[0].toLowerCase();
+    const framework = image.split('.')[0];
     const card = createCardElement(framework);
     memoryGame.appendChild(card);
   });
